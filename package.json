@@ -5,6 +5,17 @@
   "license": "ISC",
   "description": "Connect HOC for unstated",
   "main": "dist/unstated-connect.min.js",
+  "keywords": [
+    "unstated",
+    "connect",
+    "HOC",
+    "redux",
+    "react",
+    "state",
+    "state management",
+    "mobx",
+    "mst"
+  ],
   "scripts": {
     "build": "PACKAGE_NAME=unstated-connect rollup --config scripts/rollup.config.js"
   },
