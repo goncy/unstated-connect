@@ -1,7 +1,7 @@
 {
   "name": "unstated-connect",
   "author": "Gonzalo Pozzo <goncy>",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "ISC",
   "description": "Connect HOC for unstated",
   "main": "dist/unstated-connect.min.js",
