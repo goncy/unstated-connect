@@ -51,7 +51,6 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/test-setup.js",
-    "testEnvironment": "node",
     "verbose": true,
     "collectCoverage": true,
     "notify": true
