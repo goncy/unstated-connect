@@ -1,6 +1,7 @@
 # Unstated connect (`unstated-connect`)
 [![Build Status](https://travis-ci.org/goncy/unstated-connect.svg?branch=master)](https://travis-ci.org/goncy/unstated-connect)
 [![Coverage Status](https://coveralls.io/repos/github/goncy/unstated-connect/badge.svg?branch=master)](https://coveralls.io/github/goncy/unstated-connect?branch=master)
+
 A simple Redux-like `connect` for `unstated`
 
 ## Installation
