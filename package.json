@@ -18,7 +18,8 @@
   ],
   "scripts": {
     "build": "PACKAGE_NAME=unstated-connect rollup --config scripts/rollup.config.js",
-    "test": "jest"
+    "test": "jest",
+    "cover": "npm test -- --coverage"
   },
   "repository": {
     "type": "git",
