@@ -6,23 +6,11 @@
 
   React = React && React.hasOwnProperty('default') ? React['default'] : React;
 
-  var _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
   var connect = (function (_containers) {
-    return function (component) {
-      return function Connect(props) {
+    return function (Component) {
+      return function (props) {
         return React.createElement(
           unstated.Subscribe,
           { to: _containers },
@@ -31,7 +19,7 @@
               containers[_key] = arguments[_key];
             }
 
-            return React.createElement(component, _extends({ containers: containers }, props));
+            return React.createElement(Component, _extends({ containers: containers }, props));
           }
         );
       };

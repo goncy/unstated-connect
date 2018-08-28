@@ -11,6 +11,10 @@ const EXTERNAL = ['unstated', 'react']
 const GLOBALS = {
   react: 'React'
 }
+const BABEL_CONFIG = {
+  babelrc: false,
+  presets: [['env', { modules: false }], 'react']
+}
 
 const isExternal = id => !id.startsWith('.') && !id.startsWith('/')
 
@@ -26,7 +30,7 @@ export default [
     external: EXTERNAL,
     plugins: [
       resolve(),
-      babel(),
+      babel(BABEL_CONFIG),
       commonjs(),
       replace({ 'process.env.NODE_ENV': JSON.stringify('development') }),
     ],
@@ -43,7 +47,7 @@ export default [
     external: EXTERNAL,
     plugins: [
       resolve(),
-      babel(),
+      babel(BABEL_CONFIG),
       commonjs(),
       replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
       uglify(),
@@ -57,7 +61,7 @@ export default [
       format: 'cjs',
     },
     external: isExternal,
-    plugins: [babel()],
+    plugins: [babel(BABEL_CONFIG)],
   },
 
   {
@@ -67,6 +71,6 @@ export default [
       format: 'es',
     },
     external: isExternal,
-    plugins: [babel()],
+    plugins: [babel(BABEL_CONFIG)],
   },
 ]
