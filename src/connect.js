@@ -1,13 +1,10 @@
 import React from "react";
-import {Subscribe} from "unstated";
+import { Subscribe } from "unstated";
 
-export default _containers => component =>
-  function Connect(props) {
-    return (
-      <Subscribe to={_containers}>
-        {(...containers) =>
-          React.createElement(component, {containers, ...props})
-        }
-      </Subscribe>
-    );
-  };
+export default _containers => Component => props => (
+  <Subscribe to={_containers}>
+    {(...containers) =>
+      <Component containers={containers} {...props}/>
+    }
+  </Subscribe>
+);
