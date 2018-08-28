@@ -17,7 +17,7 @@
     "mst"
   ],
   "scripts": {
-    "build": "PACKAGE_NAME=unstated-connect rollup --config scripts/rollup.config.js",
+    "build": "PACKAGE_NAME=unstated-connect rollup --config rollup.config.js",
     "test": "jest",
     "cover": "npm test -- --coverage"
   },
