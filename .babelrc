@@ -1,5 +1,8 @@
 {
   "env": {
+    "production": {
+      "presets": [["env", { "modules": false }], "react"]
+    },
     "test": {
       "presets": ["env", "react"]
     }

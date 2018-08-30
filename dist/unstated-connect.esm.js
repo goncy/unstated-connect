@@ -14,7 +14,7 @@ var connect = (function (_containers) {
             containers[_key] = arguments[_key];
           }
 
-          return React.createElement(Component, _extends({ containers: containers }, props));
+          return React.createElement(Component, _extends({}, props, { containers: containers }));
         }
       );
     };
