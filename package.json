@@ -5,6 +5,7 @@
   "license": "ISC",
   "description": "Connect HOC for unstated",
   "main": "dist/unstated-connect.min.js",
+  "module": "dist/unstated-connect.esm.js",
   "keywords": [
     "unstated",
     "connect",
