@@ -38,7 +38,7 @@ class App extends Component {
       <Container>
          <Title>Your todos:</Title>
          <ul>{todos.map((item, index) => (
-           <li onClick={() => this.handleDeleteTodo(index)}>{item}</li>
+           <li key={index} onClick={() => this.handleDeleteTodo(index)}>{item}</li>
          ))}</ul>
          <button onClick={this.handleButtonClick}>Add new todo</button>
       </Container>
@@ -49,7 +49,10 @@ class App extends Component {
 export default connect([GlobalState])(App);
 ```
 
+The component can now access the state of the container, change it and automatically re-render after container changes.
+
 ## License
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
