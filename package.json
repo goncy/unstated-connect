@@ -1,7 +1,7 @@
 {
   "name": "unstated-connect",
   "author": "Gonzalo Pozzo <goncy>",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "license": "ISC",
   "description": "Connect HOC for unstated",
   "main": "dist/unstated-connect.min.js",
@@ -33,8 +33,8 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "change-case": "^3.0.2",
-    "cross-env": "^5.2.0",
     "coveralls": "^3.0.1",
+    "cross-env": "^5.2.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.0.0",
