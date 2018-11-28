@@ -16,7 +16,7 @@ npm install --save unstated-connect
 import React, { Component } from "react";
 import connect from "unstated-connect";
 
-import GlobalState from "./containers/jokes";
+import GlobalState from "./store/GlobalState";
 
 class App extends Component {
   handleButtonClick = () => {
@@ -35,13 +35,13 @@ class App extends Component {
     const { GlobalState: { state: { todos } } } = this.props.containers;
 
     return (
-      <div>
-         <h2>Your todos:</h2>
+      <Container>
+         <Title>Your todos:</Title>
          <ul>{todos.map((item, index) => (
            <li onClick={() => this.handleDeleteTodo(index)}>{item}</li>
          ))}</ul>
          <button onClick={this.handleButtonClick}>Add new todo</button>
-      </div>
+      </Container>
     );
   }
 }
