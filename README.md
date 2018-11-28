@@ -2,54 +2,51 @@
 [![Build Status](https://travis-ci.org/goncy/unstated-connect.svg?branch=master)](https://travis-ci.org/goncy/unstated-connect)
 [![Coverage Status](https://coveralls.io/repos/github/goncy/unstated-connect/badge.svg?branch=master)](https://coveralls.io/github/goncy/unstated-connect?branch=master)
 
-A simple Redux-like `connect` for `unstated`
+A simple Redux-like `connect` for `unstated`. Useful when you need to access containers on lifecycle hooks.
 
 ## Installation
 ```sh
+yarn add unstated-connect
+// or
 npm install --save unstated-connect
 ```
 
-## Why
-Useful when you need to access containers on lifecycle hooks
-
-## How
+## How to use
 ```jsx
-import React, {Component} from "react";
+import React, { Component } from "react";
 import connect from "unstated-connect";
 
-import jokes from "./containers/jokes";
+import GlobalState from "./containers/jokes";
 
 class App extends Component {
-  async componentDidMount() {
-    const [jokes] = this.props.containers;
+  handleButtonClick = () => {
+    const { GlobalState } = this.props.containers;
 
-    await [jokes.getJoke()];
+    GlobalState.addTodo('Hello world');
+  }
+  
+  handleDeleteTodo = (index) => {
+    const { GlobalState } = this.props.containers;
+
+    GlobalState.removeTodo(index);
   }
 
   render() {
-    const [jokes] = this.props.containers;
+    const { GlobalState: { state: { todos } } } = this.props.containers;
 
     return (
-      <Container>
-        <header className="center">
-          <h1>Chuck norris jokes</h1>
-        </header>
-        <section>
-          {jokes.state.list.map((joke, key) => (
-            <div className="card" key={key}>
-              {joke}
-            </div>
-          ))}
-        </section>
-        <footer onClick={jokes.getJoke} className="center">
-          Get joke
-        </footer>
-      </Container>
+      <div>
+         <h2>Your todos:</h2>
+         <ul>{todos.map((item, index) => (
+           <li onClick={() => this.handleDeleteTodo(index)}>{item}</li>
+         ))}</ul>
+         <button onClick={this.handleButtonClick}>Add new todo</button>
+      </div>
     );
   }
 }
 
-export default connect([jokes])(App);
+export default connect([GlobalState])(App);
 ```
 
 ## License
