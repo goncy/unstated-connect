@@ -17,7 +17,7 @@
     "mst"
   ],
   "scripts": {
-    "build": "PACKAGE_NAME=unstated-connect NODE_ENV=production rollup --config rollup.config.js",
+    "build": "cross-env PACKAGE_NAME=unstated-connect NODE_ENV=production rollup --config rollup.config.js",
     "test": "jest",
     "cover": "npm test -- --coverage"
   },
@@ -46,6 +46,7 @@
     "rollup-plugin-uglify": "^4.0.0"
   },
   "dependencies": {
+    "cross-env": "^5.2.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "unstated": "^2.1.1"
